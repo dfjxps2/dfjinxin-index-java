@@ -1,0 +1,232 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>dfjinxin-index</groupId>
+  <artifactId>app-mvc</artifactId>
+  <packaging>war</packaging>
+  <version>1.1</version>
+  <name>app-mvc Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springversion>4.1.6.RELEASE</springversion>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <!--<pageSourceDir>../spider-show/web</pageSourceDir>-->
+  </properties>
+
+
+
+  <dependencies>
+
+
+    <!--  操作excel,doc... -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.17</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>3.17</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!--权限模块,包含登录、用户、角色、用户组以及菜单管理-->
+    <!--<dependency>-->
+      <!--<groupId>dfjinxin-index</groupId>-->
+      <!--<artifactId>auth-manager</artifactId>-->
+      <!--<version>1.2</version>-->
+    <!--</dependency>-->
+
+    <!--對接權限中心-->
+    <dependency>
+      <groupId>dfjinxin-index</groupId>
+      <artifactId>auth-synchronization</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.googlecode.aviator</groupId>
+      <artifactId>aviator</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.17</version>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+
+  <profiles>
+    <!--本地开发环境-->
+    <profile>
+      <id>local</id>
+      <properties>
+        <package.environment>local</package.environment>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <!--统一开发环境-->
+    <profile>
+      <id>dev</id>
+      <properties>
+        <package.environment>dev</package.environment>
+      </properties>
+    </profile>
+    <!--测试环境-->
+    <profile>
+      <id>test</id>
+      <properties>
+        <package.environment>test</package.environment>
+      </properties>
+    </profile>
+    <!--内网生产环境-->
+    <profile>
+      <id>product</id>
+      <properties>
+        <package.environment>product</package.environment>
+      </properties>
+    </profile>
+    <!--互联网生产环境-->
+    <profile>
+      <id>product-internet</id>
+      <properties>
+        <package.environment>product-internet</package.environment>
+      </properties>
+    </profile>
+  </profiles>
+
+  <build>
+    <finalName>index-service</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <attachClasses>true</attachClasses>
+          <classesClassifier>jar</classesClassifier>
+          <webResources>
+            <resource>
+              <directory>src/main/resources/base</directory>
+              <targetPath>WEB-INF/classes</targetPath>
+              <includes>
+                <include>*</include>
+              </includes>
+              <filtering>true</filtering>
+            </resource>
+            <resource>
+              <directory>src/main/resources/${package.environment}/config</directory>
+              <targetPath>WEB-INF/classes</targetPath>
+              <includes>
+                <include>*.xml</include>
+                <include>*.properties</include>
+              </includes>
+              <excludes>
+                <exclude>src/main/resources/*.TXT</exclude>
+              </excludes>
+              <filtering>true</filtering>
+            </resource>
+            <resource>
+              <directory>src/main/resources/${package.environment}/webxml</directory>
+              <targetPath>WEB-INF</targetPath>
+              <includes>
+                <include>web.xml</include>
+              </includes>
+              <excludes>
+                <exclude>src/main/resources/*.TXT</exclude>
+              </excludes>
+              <filtering>true</filtering>
+            </resource>
+          </webResources>
+          <packagingExcludes>
+            WEB-INF/classes/local/**,
+            WEB-INF/classes/dev/**,
+            WEB-INF/classes/test/**,
+            WEB-INF/classes/product/**,
+            WEB-INF/classes/product-internet/**,
+            WEB-INF/classes/base/**
+          </packagingExcludes>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+
+    <resources>
+      <!--<resource>-->
+        <!--<directory>src/main/resources</directory>-->
+        <!--<includes>-->
+          <!--<include>*</include>-->
+        <!--</includes>-->
+        <!--<excludes>-->
+          <!--<exclude>src/main/resources/*.TXT</exclude>-->
+        <!--</excludes>-->
+        <!--&lt;!&ndash;<targetPath>${project.build.directory}/${build.finalName}/WEB-INF/classes</targetPath>&ndash;&gt;-->
+      <!--</resource>-->
+      <!--是否一并将页面程序-CSS HTML JS等打包-->
+      <!--<resource>-->
+        <!--<directory>${pageSourceDir}</directory>-->
+        <!--<includes>-->
+          <!--<include>**/*</include>-->
+        <!--</includes>-->
+
+        <!--<excludes>-->
+          <!--<exclude>WEB-INF/*</exclude>-->
+        <!--</excludes>-->
+        <!--<targetPath>${project.build.directory}/${build.finalName}</targetPath>-->
+        <!--&lt;!&ndash; 是否替换资源中的属性 &ndash;&gt;-->
+        <!--<filtering>false</filtering>-->
+      <!--</resource>-->
+    </resources>
+  </build>
+</project>
