@@ -1,10 +1,10 @@
-package com.datarecord.webapp.sys.user.dao;
+package com.index.webapp.sys.user.dao;
 
 
-import com.datarecord.webapp.sys.origin.entity.ChinaAreaCode;
-import com.datarecord.webapp.sys.origin.entity.OriginNature;
-import com.datarecord.webapp.sys.user.entity.CustomerUser;
-import com.datarecord.webapp.sys.user.entity.UserForgetPwdRecord;
+import com.index.webapp.sys.origin.entity.ChinaAreaCode;
+import com.index.webapp.sys.origin.entity.OriginNature;
+import com.index.webapp.sys.user.entity.CustomerUser;
+import com.index.webapp.sys.user.entity.UserForgetPwdRecord;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;

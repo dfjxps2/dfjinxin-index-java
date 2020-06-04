@@ -1,12 +1,12 @@
-package com.datarecord.webapp.sys.user.controller;
+package com.index.webapp.sys.user.controller;
 
-import com.datarecord.webapp.sys.origin.entity.ChinaAreaCode;
-import com.datarecord.webapp.sys.origin.entity.Origin;
-import com.datarecord.webapp.sys.origin.entity.OriginNature;
-import com.datarecord.webapp.sys.origin.service.OriginService;
-import com.datarecord.webapp.sys.user.entity.CustomerUser;
-import com.datarecord.webapp.sys.user.entity.UserForgetPwdRecord;
-import com.datarecord.webapp.sys.user.service.CustomerUserService;
+import com.index.webapp.sys.origin.entity.ChinaAreaCode;
+import com.index.webapp.sys.origin.entity.Origin;
+import com.index.webapp.sys.origin.entity.OriginNature;
+import com.index.webapp.sys.origin.service.OriginService;
+import com.index.webapp.sys.user.entity.CustomerUser;
+import com.index.webapp.sys.user.entity.UserForgetPwdRecord;
+import com.index.webapp.sys.user.service.CustomerUserService;
 import com.google.common.base.Strings;
 import com.webapp.support.json.JsonSupport;
 import com.webapp.support.jsonp.JsonResult;

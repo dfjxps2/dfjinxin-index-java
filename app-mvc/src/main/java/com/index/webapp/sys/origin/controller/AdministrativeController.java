@@ -1,7 +1,7 @@
-package com.datarecord.webapp.sys.origin.controller;
+package com.index.webapp.sys.origin.controller;
 
-import com.datarecord.webapp.sys.origin.entity.Administrative;
-import com.datarecord.webapp.sys.origin.service.AdministrativeService;
+import com.index.webapp.sys.origin.entity.Administrative;
+import com.index.webapp.sys.origin.service.AdministrativeService;
 import com.webapp.support.json.JsonSupport;
 import com.webapp.support.jsonp.JsonResult;
 import com.webapp.support.page.PageResult;

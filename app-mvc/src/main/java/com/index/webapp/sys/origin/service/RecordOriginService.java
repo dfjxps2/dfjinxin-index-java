@@ -1,8 +1,8 @@
-package com.datarecord.webapp.sys.origin.service;
+package com.index.webapp.sys.origin.service;
 
-import com.datarecord.webapp.sys.origin.entity.Origin;
-import com.datarecord.webapp.sys.origin.entity.RecordOrigin;
-import com.datarecord.webapp.sys.origin.tree.EntityTree;
+import com.index.webapp.sys.origin.entity.Origin;
+import com.index.webapp.sys.origin.entity.RecordOrigin;
+import com.index.webapp.sys.origin.tree.EntityTree;
 import com.webapp.support.page.PageResult;
 
 import java.util.List;

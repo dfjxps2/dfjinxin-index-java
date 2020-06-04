@@ -1,9 +1,9 @@
-package com.datarecord.webapp.sys.origin.controller;
+package com.index.webapp.sys.origin.controller;
 
-import com.datarecord.webapp.sys.origin.entity.RecordOrigin;
-import com.datarecord.webapp.sys.origin.service.RecordOriginService;
-import com.datarecord.webapp.sys.origin.tree.EntityTree;
-import com.datarecord.webapp.sys.origin.tree.TreeUtil;
+import com.index.webapp.sys.origin.entity.RecordOrigin;
+import com.index.webapp.sys.origin.service.RecordOriginService;
+import com.index.webapp.sys.origin.tree.EntityTree;
+import com.index.webapp.sys.origin.tree.TreeUtil;
 import com.webapp.support.json.JsonSupport;
 import com.webapp.support.jsonp.JsonResult;
 import com.webapp.support.page.PageResult;

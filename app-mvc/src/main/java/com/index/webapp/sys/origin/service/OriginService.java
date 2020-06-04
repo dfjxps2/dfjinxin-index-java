@@ -1,6 +1,6 @@
-package com.datarecord.webapp.sys.origin.service;
+package com.index.webapp.sys.origin.service;
 
-import com.datarecord.webapp.sys.origin.entity.Origin;
+import com.index.webapp.sys.origin.entity.Origin;
 import com.webapp.support.page.PageResult;
 import com.workbench.auth.user.entity.User;
 

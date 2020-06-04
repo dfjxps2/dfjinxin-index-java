@@ -1,8 +1,8 @@
-package com.datarecord.webapp.sys.origin.service.impl;
+package com.index.webapp.sys.origin.service.impl;
 
-import com.datarecord.webapp.sys.origin.dao.IOriginDao;
-import com.datarecord.webapp.sys.origin.entity.Origin;
-import com.datarecord.webapp.sys.origin.service.OriginService;
+import com.index.webapp.sys.origin.dao.IOriginDao;
+import com.index.webapp.sys.origin.entity.Origin;
+import com.index.webapp.sys.origin.service.OriginService;
 import com.github.pagehelper.Page;
 import com.webapp.support.page.PageResult;
 import com.workbench.auth.user.entity.User;

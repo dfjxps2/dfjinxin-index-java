@@ -1,9 +1,9 @@
-package com.datarecord.webapp.sys.origin.service.impl;
+package com.index.webapp.sys.origin.service.impl;
 
-import com.datarecord.webapp.sys.origin.dao.IAdministrativeDao;
-import com.datarecord.webapp.sys.origin.entity.Administrative;
-import com.datarecord.webapp.sys.origin.entity.Origin;
-import com.datarecord.webapp.sys.origin.service.AdministrativeService;
+import com.index.webapp.sys.origin.dao.IAdministrativeDao;
+import com.index.webapp.sys.origin.entity.Administrative;
+import com.index.webapp.sys.origin.entity.Origin;
+import com.index.webapp.sys.origin.service.AdministrativeService;
 import com.github.pagehelper.Page;
 import com.webapp.support.page.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;

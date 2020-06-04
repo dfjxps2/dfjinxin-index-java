@@ -1,4 +1,4 @@
-package com.datarecord.webapp.sys.origin.entity;
+package com.index.webapp.sys.origin.entity;
 
 import java.math.BigInteger;
 

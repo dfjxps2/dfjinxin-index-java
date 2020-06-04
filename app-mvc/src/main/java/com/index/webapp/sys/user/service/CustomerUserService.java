@@ -1,8 +1,8 @@
-package com.datarecord.webapp.sys.user.service;
+package com.index.webapp.sys.user.service;
 
-import com.datarecord.webapp.sys.origin.entity.ChinaAreaCode;
-import com.datarecord.webapp.sys.origin.entity.OriginNature;
-import com.datarecord.webapp.sys.user.entity.UserForgetPwdRecord;
+import com.index.webapp.sys.origin.entity.ChinaAreaCode;
+import com.index.webapp.sys.origin.entity.OriginNature;
+import com.index.webapp.sys.user.entity.UserForgetPwdRecord;
 import com.webapp.support.page.PageResult;
 
 import java.math.BigInteger;

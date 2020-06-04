@@ -1,6 +1,6 @@
-package com.datarecord.webapp.sys.origin.dao;
+package com.index.webapp.sys.origin.dao;
 
-import com.datarecord.webapp.sys.origin.entity.Origin;
+import com.index.webapp.sys.origin.entity.Origin;
 import com.github.pagehelper.Page;
 import com.workbench.auth.user.entity.User;
 import org.apache.ibatis.annotations.*;

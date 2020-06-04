@@ -1,8 +1,8 @@
-package com.datarecord.webapp.sys.origin.dao;
+package com.index.webapp.sys.origin.dao;
 
-import com.datarecord.webapp.sys.origin.entity.Origin;
-import com.datarecord.webapp.sys.origin.entity.RecordOrigin;
-import com.datarecord.webapp.sys.origin.tree.EntityTree;
+import com.index.webapp.sys.origin.entity.Origin;
+import com.index.webapp.sys.origin.entity.RecordOrigin;
+import com.index.webapp.sys.origin.tree.EntityTree;
 import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.datarecord.webapp.sys.user.entity;
+package com.index.webapp.sys.user.entity;
 
 import com.webapp.support.json.JsonSupport;
 
